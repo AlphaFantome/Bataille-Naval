@@ -5,7 +5,6 @@
  */
 package projet;
 
-import static java.lang.Compiler.command;
 import java.util.*;
 import java.io.*;
 
@@ -14,17 +13,26 @@ import java.io.*;
  * @author 33614
  */
 public class Jeu implements Serializable {
-
+//attribus
     public Bateaux[] tabBateauJoueur = new Bateaux[10];
     public Bateaux[] tabBateauAI = new Bateaux[10];
     public String[][] plateauJoueur = new String[15][15];
     public String[][] plateauAttaque = new String[15][15];
     public int victoire;
-
+     /**
+      * 
+      */
     public Jeu() {
 
     }
-
+//constructeur necessaire pour la save
+    /**
+     * 
+     * @param tabBateauJoueur
+     * @param tabBateauAI
+     * @param plateauJoueur
+     * @param plateauAttaque 
+     */  
     public Jeu(Bateaux[] tabBateauJoueur, Bateaux[] tabBateauAI, String[][] plateauJoueur, String[][] plateauAttaque) {
         this.tabBateauAI = tabBateauAI;
         this.tabBateauJoueur = tabBateauJoueur;
@@ -33,6 +41,10 @@ public class Jeu implements Serializable {
     }
     Couleur color = new Couleur();
 
+    //Création et remplissage de la grille du joueur
+    /**
+     * 
+     */
     public void initialisationgrilleJoueur() {
 
         for (int i = 0; i < 15; i++) {
@@ -55,6 +67,10 @@ public class Jeu implements Serializable {
 
     }
 
+    //Création et remplissage de la grille de l'AI
+    /**
+     * 
+     */
     public void initialisationgrilleAttaque() {
 
         for (int i = 0; i < 15; i++) {
@@ -76,6 +92,10 @@ public class Jeu implements Serializable {
 
     }
 
+    //affiche la grille du joueur
+    /**
+     * 
+     */
     public void affichageJoueurGrille() {
         int ascii = 65;
         System.out.println("");
@@ -93,6 +113,10 @@ public class Jeu implements Serializable {
         System.out.println("\n-----------------------------------------------");
     }
 
+    //affiche la grille de l'AI sans montrer ses bateaux
+    /**
+     * 
+     */
     public void affichageAttaqueGrille() {
         int ascii = 65;
         System.out.println("");
@@ -115,7 +139,10 @@ public class Jeu implements Serializable {
         }
         System.out.println("\n-----------------------------------------------");
     }
-
+//menu de départ
+    /**
+     * 
+     */
     public void menu() {
         int choix = -1;
         while ((choix != 4) && (victoire != 1) && (victoire != 2)) {
@@ -198,7 +225,11 @@ public class Jeu implements Serializable {
         }
     }
 
-    /// fonction selectionner 
+    /// fonction selectionner pour le choix du bateau 
+    /**
+     * 
+     * @return 
+     */
     public int Selectionner() {
         int i = 0;
         Scanner scanner = new Scanner(System.in);
@@ -231,6 +262,10 @@ public class Jeu implements Serializable {
         return i;
     }
 
+    //le menu d'action du joueur avec toutes les possibilités d'actions par tour
+    /**
+     * 
+     */
     public void choixAction() {
         int choix = -1;
         boolean test;
@@ -296,6 +331,10 @@ public class Jeu implements Serializable {
         }
     }
 
+    //menu de l'action de l'AI fait aléatoirement
+    /**
+     * 
+     */
     public void menuActionAI() {
         int numeroBateau = (int) (Math.random() * 10);
         while (tabBateauAI[numeroBateau].vie == 0 && victoire!=1) {
@@ -326,20 +365,27 @@ public class Jeu implements Serializable {
         }
         
     }
-
+//condition de victoire pour la fin de la partie
+    /**
+     * 
+     */
     public void Victoire() {
+        //tous les bateaux du joueur sont mort
         if ((tabBateauJoueur[0].vie == 0) && (tabBateauJoueur[1].vie == 0) && (tabBateauJoueur[2].vie == 0) && (tabBateauJoueur[3].vie == 0) && (tabBateauJoueur[4].vie == 0) && (tabBateauJoueur[5].vie == 0) && (tabBateauJoueur[6].vie == 0) && (tabBateauJoueur[7].vie == 0) && (tabBateauJoueur[8].vie == 0) && (tabBateauJoueur[9].vie == 0)) {
             victoire = 2;
  
         }
+        //tous les bateaux de l'AI sont mort
         if ((tabBateauAI[0].vie == 0) && (tabBateauAI[1].vie == 0) && (tabBateauAI[2].vie == 0) && (tabBateauAI[3].vie == 0) && (tabBateauAI[4].vie == 0) && (tabBateauAI[5].vie == 0) && (tabBateauAI[6].vie == 0) && (tabBateauAI[7].vie == 0) && (tabBateauAI[8].vie == 0) && (tabBateauAI[9].vie == 0)) {
             victoire = 1;
             
         }
+        //tous les sous-marin du joueur sont mort
         if ((tabBateauJoueur[6].vie == 0) && (tabBateauJoueur[7].vie == 0) && (tabBateauJoueur[8].vie == 0) && (tabBateauJoueur[9].vie == 0)) {
             victoire = 2;
             
         }
+        //tous les sous-marin de l'AI sont mort
         if ((tabBateauAI[6].vie == 0) && (tabBateauAI[7].vie == 0) && (tabBateauAI[8].vie == 0) && (tabBateauAI[9].vie == 0)) {
             victoire = 1;
            

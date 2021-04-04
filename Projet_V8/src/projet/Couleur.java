@@ -20,37 +20,58 @@ public class Couleur implements Serializable{
         public final String ColorCyan = "\u001B[36m";
         public final String ColorBlack = "\u001B[30m";
 
-    
+    /**
+     * 
+     * @return 
+     */
     public String getColorR()
     {
         return this.ColorRed;
     }
-    
+    /**
+     * 
+     * @return 
+     */
     public String getColorG()
     {
         return this.ColorGreen;
     }
-    
+    /**
+     * 
+     * @return 
+     */
     public String getColorY()
     {
         return this.ColorYellow;
     }
-    
+    /**
+     * 
+     * @return 
+     */
     public String getColorB()
     {
         return this.ColorBlue;
     }
-    
+    /**
+     * 
+     * @return 
+     */
     public String getColorP()
     {
         return this.ColorPurple;
     }
-    
+    /**
+     * 
+     * @return 
+     */
     public String getColorC()
     {
         return this.ColorCyan;
     }
-    
+    /**
+     * 
+     * @return 
+     */
     public String getColorBl()
     {
         return this.ColorBlack;

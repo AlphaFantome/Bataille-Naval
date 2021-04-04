@@ -14,6 +14,11 @@ import java.util.*;
 public class SousMarin extends Bateaux {
 
 /// constructeur du Sous-marin 
+    /**
+     * 
+     * @param plateau
+     * @param nomBateau 
+     */
     public SousMarin(String[][] plateau, String nomBateau) {
 
         nom = nomBateau;
@@ -95,7 +100,12 @@ public class SousMarin extends Bateaux {
         /// on instancie les coordonnees de la premiere case du tableau 
         plateau[x][y] = nom;
     }
-
+/**
+ * 
+ * @param plateauJoueur
+ * @param numeroJoueur
+ * @return 
+ */
     @Override
     public boolean deplacer(String[][] plateauJoueur, int numeroJoueur) {
         int choix = 0;
@@ -117,6 +127,7 @@ public class SousMarin extends Bateaux {
         }
 
         do {
+            //1 le joueur joue, 2 l'AI joue
             if (numeroJoueur == 1) {
                 System.out.println("Choissisez un déplacement");
                 System.out.println("1-Gauche");
@@ -145,9 +156,6 @@ public class SousMarin extends Bateaux {
             /// on verifie que la grille ne soit pas remplie et que le deplacement ne sorte pas le bateau de la grille 
             if (choix == 1 && (y - 1) >= 0) {
                 if ("  ".equals(plateauJoueur[x][y - 1])) {
-                    System.out.println(" Y - 1 = " + (y - 1));
-                    System.out.println(" choix = " + choix);
-
                     /// on décale chaque case du bateau vers la gauche                            
                     plateauJoueur[x][y - 1] = nom;
 

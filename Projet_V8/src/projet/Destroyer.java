@@ -15,6 +15,11 @@ public class Destroyer extends Bateaux {
     public boolean premierTir;
 
     /// constructeur du Destroyer
+    /**
+     * 
+     * @param plateau
+     * @param nomBateau 
+     */
     public Destroyer( String[][] plateau, String nomBateau ){
         
         nom = nomBateau;
@@ -127,7 +132,12 @@ public class Destroyer extends Bateaux {
 
         }
     }
-    
+    /**
+     * 
+     * @param plateauAttaque
+     * @param tabBateaux
+     * @param numeroJoueur 
+     */
  @Override
     public void tirer( String[][] plateauAttaque, Bateaux[] tabBateaux, int numeroJoueur ){
         if(premierTir){

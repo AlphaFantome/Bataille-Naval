@@ -23,6 +23,12 @@ public abstract class Bateaux implements Serializable {
 
     Couleur color = new Couleur();
 
+    /**
+     * 
+     * @param plateauJoueur
+     * @param numeroJoueur
+     * @return 
+     */
     public boolean deplacer(String[][] plateauJoueur, int numeroJoueur) {
         int choix = 0;
         Scanner move = new Scanner(System.in);
@@ -96,7 +102,7 @@ public abstract class Bateaux implements Serializable {
                     System.out.println(" Choix =  " + choix);
                     System.out.println(" Veuillez choisir l une des 2 options ");
                 } else {
-                    System.out.println(" Le deplacement n a pas ete efectue car un bateau bloque ou le bateau sortirait de la grille ");
+                    System.out.println(" Le deplacement n a pas ete effectue car un bateau bloque ou le bateau sortirait de la grille ");
                     System.out.println(" Vous allez retournez a la selection de bateaux ");
                     deplacement = false;
                 }
@@ -119,11 +125,11 @@ public abstract class Bateaux implements Serializable {
                     choix = (int) (Math.random() * (2) + 1);
                      if(choix==1)
                     {
-                        System.out.print(" vers la Haut\n");
+                        System.out.print(" vers le Haut\n");
                     }
                     if(choix==2)
                     {
-                        System.out.print(" vers la Bas\n");
+                        System.out.print(" vers le Bas\n");
                     }
                 }
 
@@ -177,6 +183,12 @@ public abstract class Bateaux implements Serializable {
         return deplacement;
     }
 
+    /**
+     * 
+     * @param plateauAttaque
+     * @param tabBateaux
+     * @param numeroJoueur 
+     */
     public void tirer(String[][] plateauAttaque, Bateaux[] tabBateaux, int numeroJoueur) {
 
         int posX = -1;
@@ -202,7 +214,7 @@ public abstract class Bateaux implements Serializable {
                 System.out.println("Erreur sur la ligne");
             }
             
-                System.out.println("Choisiez la colonne ou vous voulez tirer :");
+                System.out.println("Choisissez la colonne ou vous voulez tirer :");
                 
                 try {
                     

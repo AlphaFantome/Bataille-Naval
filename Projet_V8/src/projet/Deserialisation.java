@@ -15,12 +15,16 @@ import java.io.ObjectInputStream;
 public class Deserialisation {
     
     public int victoire;
-    
+    /**
+     * 
+     */
      public Deserialisation()
     {
         
     }
-    
+    /**
+     * 
+     */
     public void DeserialisationGame(){
 
     Bateaux[] tabBateauJoueur = new Bateaux[10];
@@ -50,7 +54,10 @@ public class Deserialisation {
             e.printStackTrace();
         }
     }
-    
+    /**
+     * 
+     * @return 
+     */
     public int getVictoire()
     {
         return this.victoire;

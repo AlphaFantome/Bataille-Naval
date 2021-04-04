@@ -5,9 +5,6 @@
  */
 package projet;
 
-//import java.util.Scanner;
-//import java.util.*;
-
 /**
  *
  * @author 33614
@@ -18,6 +15,11 @@ public class Croiseur extends Bateaux{
     
     
         /// constructeur du Croiseur 
+    /**
+     * 
+     * @param plateau
+     * @param nomBateau 
+     */
     public Croiseur( String[][] plateau, String nomBateau ){
         
         nom = nomBateau;
@@ -127,55 +129,7 @@ public class Croiseur extends Bateaux{
                 plateau[x][i] = nom;
 
         }
-    }
-    
-  /*  public void tirer(Croiseur test2) {
-        
-        int i;
-        int j;
-        int posX;
-        int posY;
-        
-        Scanner px = new Scanner(System.in);
-        Scanner py = new Scanner(System.in);
-        
-        System.out.println("Pour Tirer");
-        System.out.println("Choisiez une position x:");
-        posX = px.nextInt();
-        while(posX<0 || posX>15)
-        {
-            System.out.println("Error valeur de X non valide, veuillez re-rentrer la valeur : ");
-            posX = px.nextInt();
-        }
-        
-        System.out.println("Choisiez une position y:");
-        posY = py.nextInt();
-        while(posY<0 || posY>15)
-        {
-            System.out.println("Error valeur de Y non valide, veuillez re-rentrer la valeur : ");
-            posY = py.nextInt();
-        }
-        
-        
-        for(i=0; i<posX; i++)
-        {
-            for(j=0; j<posY; j++)
-            {
-                if((test2.corps[i].x == posX) && (test2.corps[j].y== posY) || (test2.corps[i].x== posX+1) && (test2.corps[j].y== posY) ||(test2.corps[i].x == posX) && (test2.corps[j].y == posY+1)||(test2.corps[i].x == posX+1) && (test2.corps[j].y == posY+1))
-                {
-                     
-                     System.out.println("Vous avez toucher un ennemi");
-                }
-                
-                else
-                {
-                    System.out.println("Vous n'avez rien toucher");
-                }
-                   
-                
-            }
-        } */
-    
+    }    
 }
     
 

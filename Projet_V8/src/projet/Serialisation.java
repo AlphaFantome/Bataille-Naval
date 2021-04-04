@@ -14,10 +14,20 @@ import java.io.ObjectOutputStream;
  * @author amaur
  */
 public class Serialisation {
+    /**
+     * 
+     */
     public Serialisation()
     {
         
     }    
+    /**
+     * 
+     * @param tabBateauJoueur
+     * @param tabBateauAI
+     * @param plateauJoueur
+     * @param plateauAttaque 
+     */
     public void SerialisationGame(Bateaux[] tabBateauJoueur , Bateaux[] tabBateauAI, String[][] plateauJoueur, String [][] plateauAttaque ){
        
 

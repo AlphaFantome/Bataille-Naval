@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package projet;
-import java.util.*;
 /**
  *
  * @author admin
@@ -12,6 +11,11 @@ import java.util.*;
 public class Cuirassé extends Bateaux {
     
     /// constructeur du cuirasse 
+    /**
+     * 
+     * @param plateau
+     * @param nomBateau 
+     */
     public Cuirassé( String[][] plateau, String nomBateau  ){
         
         nom = nomBateau;
